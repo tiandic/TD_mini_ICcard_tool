@@ -72,6 +72,7 @@ def main():
         # 获取数据的所有组合
         for start_no_block_bytes in range(len(block_bytes)):
             for end_no_block_bytes in range(start_no_block_bytes+1,len(block_bytes)):
+                # 使用check_code_algorithm_func.py的所有算法计算校验码
                 for func in func_list:
                     check_code=call_function_from_module(func,block_bytes[start_no_block_bytes:end_no_block_bytes])
                     if check_code == rignt_check_code:
@@ -81,6 +82,7 @@ def main():
                             doc[doc_key]=doc[doc_key]+1
                         else:
                             doc[doc_key]=1
+                    # 单字节取反
                     elif 0xff-check_code == rignt_check_code:
                         # 字典的键
                         doc_key=(f"negation {func}",start_no_block_bytes,end_no_block_bytes)
