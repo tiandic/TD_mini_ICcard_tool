@@ -1,7 +1,7 @@
 <!--
  * @encode: utf-8
  * @Date: 2025-04-05 15:18:16
- * @LastEditTime: 2025-04-12 13:31:58
+ * @LastEditTime: 2025-04-12 14:10:26
  * @FilePath: /TD_mini_ICcard_tool/README.md
 -->
 # 这是一个简单的用于辅助查找IC卡某个数据块中的校验码的工具
@@ -24,6 +24,7 @@ options:
                         指定校验码在bytes类型时的下标
   -s, --skip            指定该参数,则跳过计算范围只有一个字符的情况
   -f FILE, --file FILE  指定输入的文件路径
+  --auto                尝试自动寻找校验码算法(自动模式下,不指定-l时,仅会输出完全符合所有数据块的算法) 
 ```
 
 # 使用示例:
